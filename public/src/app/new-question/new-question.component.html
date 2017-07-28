@@ -1,0 +1,25 @@
+<div>
+    <div>
+    <a href [routerLink]="['/questionsDash']">Go Home   |   </a>
+    
+    <a href (click)="logout()">Logout</a>
+  </div>
+  <form (submit)='createQuestion()'>
+    <div>
+      <label>Question</label>
+    </div>
+    <div>
+      <textarea name='question' [(ngModel)]='newQuestion.question' cols= '50' rows='10'></textarea>
+    </div>
+    <p [ngStyle]="{'color': 'red'}" *ngFor='let error of errors'>{{ error }}</p>
+    <div>
+      <label>Description (Optional)</label>
+    </div>
+    <div>
+      <textarea name='description' [(ngModel)]='newQuestion.description' cols= '50' rows='10'></textarea>
+    </div>
+    <button type='submit'>Submit Question</button>
+    <button [routerLink]="['/questionsDash']">Cancel</button>
+  </form>
+
+</div>

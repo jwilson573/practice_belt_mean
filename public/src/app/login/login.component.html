@@ -1,0 +1,11 @@
+<div>
+  <h1>Q &amp; A</h1>
+  <form (submit)='createUser()'>
+    <div>
+      <label>Name:</label>
+      <input type='text' name='name' [(ngModel)]='newUser.name'>
+      <button type='submit'>Enter</button>
+    </div>
+    <p [ngStyle]="{'color': 'red'}" *ngFor='let error of errors'>{{ error }}</p>
+  </form>
+</div>

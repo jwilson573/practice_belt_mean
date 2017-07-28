@@ -1,0 +1,22 @@
+<div>
+  <div>
+    <a href [routerLink]="['/questionsDash']">Go Home   |   </a>
+    <a href [routerLink]="['/question', param_id, 'new_answer']">Answer this Question | </a>
+    <a href (click)="logout()">Logout</a>
+  </div>
+
+    <h1>Question: {{ question?.question }}</h1>
+    <h3>Description: {{ question?.description }}</h3>
+
+  <div> 
+    
+    <div *ngFor='let answer of question.answers; let idx = index'>
+      <h3>{{ answer.user.name }}</h3>
+      <h4>{{ answer.answer }}</h4>
+      <p>{{ answer.details }}</p>
+      <p>Likes: {{ answer.likes }}</p>
+      <button (click)='increaseLikes(answer._id, idx)'>Like</button>
+    </div>
+  </div>
+    
+</div>
